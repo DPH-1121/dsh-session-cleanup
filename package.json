@@ -1,0 +1,51 @@
+{
+  "name": "dsh-session-cleanup",
+  "version": "0.1.2",
+  "private": true,
+  "description": "Archived-session cleanup for the dsh web client: per-row delete and delete-all over the real session logs",
+  "type": "module",
+  "license": "MIT",
+  "author": "HaydenSmith1121",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HaydenSmith1121/dsh-session-cleanup.git"
+  },
+  "main": "./lib/index.js",
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": "./lib/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-renderer",
+        "@deepseek-ai/dsh-client-ui-session",
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-client-ui-workspace"
+      ],
+      "platform": "web"
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.2",
+    "react": "^18.2.0"
+  },
+  "homepage": "https://github.com/HaydenSmith1121/dsh-session-cleanup#readme",
+  "bugs": {
+    "url": "https://github.com/HaydenSmith1121/dsh-session-cleanup/issues"
+  }
+}
