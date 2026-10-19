@@ -84,7 +84,7 @@ DSH 本身**没有任何删除会话的能力**。这不是「没做 UI」，而
 ## 二、安装
 
 ```bash
-dsh plugin --profile web add <本仓库>/plugins/dsh-session-cleanup/0.1.6-alpha.1/dsh-session-cleanup-0.1.0.tgz
+dsh plugin --profile web add <本仓库>/plugins/dsh-session-cleanup/0.2.1-rc.2/dsh-session-cleanup-0.1.3.tgz
 dsh plugin --profile web install
 ```
 

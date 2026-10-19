@@ -1,18 +1,10 @@
 # Register the archived-session cleanup page.
 #
-# This plugin adds one Settings page ("已归档会话" replaces the read-only
-# upstream page with a delete-capable one) served by this plugin's own host
-# half. The host half owns the only destructive write in the plugin: it
+# This plugin adds one Settings page ("已归档会话") served by this plugin's own
+# host half. The host half owns the only destructive write in the plugin: it
 # removes a session's durable log directory and drops the id from the
 # Workspace archive set, in that order, so a failure never leaves an
 # archive-set entry pointing at a session whose log is already gone.
-#
-# The upstream page (`@deepseek-ai/dsh-client-ui-settings-unarchive-sessions`)
-# is disabled below rather than left mounted: both register the
-# `settings.section` id `archived-sessions`, and two sections sharing one id
-# would render two navigation entries for the same page.
-- id: ui-settings-unarchive-sessions
-  disabled: true
 
 - insert:
     - id: session-cleanup
