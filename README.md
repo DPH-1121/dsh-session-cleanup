@@ -84,7 +84,7 @@ DSH 本身**没有任何删除会话的能力**。这不是「没做 UI」，而
 ## 二、安装
 
 ```bash
-dsh plugin --profile web add <本仓库>/plugins/dsh-session-cleanup/0.2.1-rc.2/dsh-session-cleanup-0.1.3.tgz
+dsh plugin --profile web add <本仓库>/plugins/dsh-session-cleanup/0.2.1-rc.3/dsh-session-cleanup-0.1.4.tgz
 dsh plugin --profile web install
 ```
 
@@ -174,6 +174,13 @@ import map，React 与平台包都由 factory 的 `require` 按名字提供。
 ---
 
 ## 六、修复记录
+
+### 2026-10-25：dsh 0.2.1-rc.3 复核（0.1.3 → 0.1.4）
+
+清单通过 rc.3 的插件闸门；装入隔离 `DSH_HOME` 的 rc.3 profile 后 `--dump-config` 组合成功、无兼容性告警；
+`scripts/build.mjs`、`smoke.mjs`、`client-verify.mjs`、`host-verify.mjs` 全部通过。rc.3 相对 rc.2 对
+`webServer` 注册面、`workspaceRegistry` 与客户端 `__ModuleLoader__` 外壳没有破坏性改动，因此没有业务代码改动，
+只把基线提到 rc.3。
 
 ### 2026-09-17：删除永远清不掉归档条目（0.1.0 → 0.1.1）
 

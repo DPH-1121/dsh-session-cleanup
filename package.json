@@ -1,6 +1,6 @@
 {
   "name": "dsh-session-cleanup",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "private": true,
   "description": "Archived-session cleanup for the dsh web client: per-row delete and delete-all over the real session logs",
   "type": "module",
