@@ -84,7 +84,7 @@ DSH 本身**没有任何删除会话的能力**。这不是「没做 UI」，而
 ## 二、安装
 
 ```bash
-dsh plugin --profile web add <本仓库>/plugins/dsh-session-cleanup/0.2.1-rc.3/dsh-session-cleanup-0.1.4.tgz
+dsh plugin --profile web add <本仓库>/plugins/dsh-session-cleanup/0.2.1-rc.5/dsh-session-cleanup-0.1.4.tgz
 dsh plugin --profile web install
 ```
 
@@ -174,6 +174,14 @@ import map，React 与平台包都由 factory 的 `require` 按名字提供。
 ---
 
 ## 六、修复记录
+
+### 2026-11-01：dsh 0.2.1-rc.5 复核（版本号不变，0.1.4）
+
+清单通过 rc.5 的插件闸门；装入隔离 `DSH_HOME` 的 rc.5 profile 后 `--dump-config` 组合成功、无兼容性告警；
+`scripts/build.mjs`、`smoke.mjs`、`client-verify.mjs`、`host-verify.mjs` 全部通过，构建产物与提交内容无 diff。
+rc.3 → rc.5 对 `webServer` 注册面、`workspaceRegistry` 与客户端 `__ModuleLoader__` 外壳逐字未变
+（`dsh-app-boot`、`dsh-plugin-manager`、`dsh-host-webserver` 只有 `package.json` 的版本号不同），
+因此没有业务代码改动，只把基线提到 rc.5。
 
 ### 2026-10-25：dsh 0.2.1-rc.3 复核（0.1.3 → 0.1.4）
 
